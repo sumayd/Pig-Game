@@ -41,6 +41,10 @@ const switchPlayer = function() {
 
 //Rolling dice functionality
 btnRoll.addEventListener('click', function(){
+    document.querySelector(`.dice`).classList.add('shake')
+    setTimeout(function(){
+        document.querySelector(`.dice`).classList.remove('shake')
+    },1000)
     if (playing === true){
     //random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1;
@@ -66,7 +70,7 @@ btnHold.addEventListener('click', function(){
         console.log(scores[activePlayer])
         document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]
         //check score is  >= 100
-        if(scores[activePlayer] >= 20){
+        if(scores[activePlayer] >= 100){
             //finishe game
             playing = false
             diceEl.classList.add('hidden');
