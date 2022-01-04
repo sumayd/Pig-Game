@@ -1,2 +1,2 @@
-# devils-bones-game
+# dice game
  
